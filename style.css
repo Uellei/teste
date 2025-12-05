@@ -11,56 +11,49 @@ body {
 }
 
 /* 1. CORAÇÃO GEOMÉTRICO GRANDE E QUICANTE */
-.geometric-heart {
-    position: absolute; /* Para ele flutuar */
-    width: 200px; /* Tamanho do coração */
-    height: 180px;
-    background-color: #ff1493; /* Pink forte */
-    transform: rotate(-45deg); /* Rotação para formar a ponta */
-    box-shadow: 0 0 20px #ff69b4;
-    z-index: 5;
-    /* Aplica a pulsação */
-    animation: pulse-heart 1.5s infinite alternate; 
-    
-    /* Configurações iniciais do JS para o quique */
-    left: 100px;
-    top: 100px;
+.geometric-heart{
+  position:absolute;
+  width:200px;
+  height:200px;              /* <- deixa quadrado */
+  background:#ff1493;
+  transform:rotate(-45deg);
+  box-shadow:0 0 20px #ff69b4;
+  animation:pulse-heart 1.5s infinite alternate;
 }
 
-/* Duas bolhas acima para formar o topo do coração */
 .geometric-heart::before,
-.geometric-heart::after {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: #ff1493;
+.geometric-heart::after{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background:#ff1493;
 }
 
-.geometric-heart::before {
-    top: -100px;
-    left: 0;
+.geometric-heart::before{
+  top:-50%;                  /* <- mais robusto que -100px */
+  left:0;
 }
 
-.geometric-heart::after {
-    top: 0;
-    left: 100px;
+.geometric-heart::after{
+  top:0;
+  left:50%;                  /* <- mais robusto que 100px */
 }
+
 
 /* Foto da Rafa dentro do coração */
-.heart-photo {
-    position: absolute;
-    width: 150px; /* Ajuste para o tamanho da foto */
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%; /* Foto redonda */
-    z-index: 6; 
-    /* Centraliza a foto no coração rotacionado */
-    top: 15px; 
-    left: 15px;
-    transform: rotate(45deg); /* Rotação contrária para a foto ficar reta */
-    border: 5px solid #fce4ec;
+.heart-photo{
+  position:absolute;
+  inset:0;
+  z-index: 99;
+  margin:auto;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  transform:rotate(45deg);
+  border:5px solid #fce4ec;
 }
 
 /* ANIMAÇÃO DE PULSAÇÃO DO CORAÇÃO */
