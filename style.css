@@ -1,0 +1,127 @@
+/* RESET E ESTILO BÁSICO CRINGE */
+body {
+    background-color: #ffc0cb; /* Rosa choque */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* Essencial para o coração quicar corretamente */
+}
+
+/* 1. CORAÇÃO GEOMÉTRICO GRANDE E QUICANTE */
+.geometric-heart {
+    position: absolute; /* Para ele flutuar */
+    width: 200px; /* Tamanho do coração */
+    height: 180px;
+    background-color: #ff1493; /* Pink forte */
+    transform: rotate(-45deg); /* Rotação para formar a ponta */
+    box-shadow: 0 0 20px #ff69b4;
+    z-index: 5;
+    /* Aplica a pulsação */
+    animation: pulse-heart 1.5s infinite alternate; 
+    
+    /* Configurações iniciais do JS para o quique */
+    left: 100px;
+    top: 100px;
+}
+
+/* Duas bolhas acima para formar o topo do coração */
+.geometric-heart::before,
+.geometric-heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff1493;
+}
+
+.geometric-heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.geometric-heart::after {
+    top: 0;
+    left: 100px;
+}
+
+/* Foto da Rafa dentro do coração */
+.heart-photo {
+    position: absolute;
+    width: 150px; /* Ajuste para o tamanho da foto */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Foto redonda */
+    z-index: 6; 
+    /* Centraliza a foto no coração rotacionado */
+    top: 15px; 
+    left: 15px;
+    transform: rotate(45deg); /* Rotação contrária para a foto ficar reta */
+    border: 5px solid #fce4ec;
+}
+
+/* ANIMAÇÃO DE PULSAÇÃO DO CORAÇÃO */
+@keyframes pulse-heart {
+    0% { transform: scale(1) rotate(-45deg); }
+    100% { transform: scale(1.05) rotate(-45deg); }
+}
+
+
+/* RESTANTE DO ESTILO CRINGE DO ALERTA (MANTIDO) */
+.alert-box {
+    width: 500px;
+    max-width: 90%;
+    background-color: #fce4ec;
+    border: 5px solid #ff1493;
+    box-shadow: 10px 10px #ff69b4;
+    z-index: 10; 
+    padding: 10px;
+    text-align: center;
+}
+.alert-header { background-color: #ff69b4; color: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; border-bottom: 3px solid #ff1493; }
+.alert-content h1 { color: #ff1493; font-size: 1.5em; text-shadow: 1px 1px white; margin-top: 0; }
+.alert-footer { padding: 10px 20px; text-align: center; border-top: 3px solid #ff1493; background-color: #ff69b4; }
+.fugitive-button, .cringe-button { padding: 8px 15px; font-weight: bold; background-color: #fce4ec; border: 3px solid #ff1493; cursor: pointer; position: relative; transition: transform 0.1s ease-out; margin: 5px; }
+.close-button { background-color: #ff1493; color: white; border: 3px solid white; padding: 1px 6px; cursor: pointer; font-weight: bold; line-height: 1; position: relative; transition: transform 0.1s ease-out; }
+.sad-faces { margin-top: 15px; }
+.cry-face { font-size: 2em; display: inline-block; margin: 0 5px; animation: cry-shake 0.5s infinite alternate; }
+@keyframes cry-shake {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(1deg); }
+    100% { transform: translateY(3px) rotate(-1deg); }
+}
+.hidden-message { display: none; text-align: center; color: #ff1493; padding: 30px; background: #fce4ec; border: 5px solid #ff1493; box-shadow: 10px 10px #ff69b4; border-radius: 10px; z-index: 20; max-width: 90%; }
+.final-love { font-size: 1.2em; color: red; }
+/* NOVO: ESTILO PARA A CAIXA DO FRETADO */
+.cringe-box {
+    width: 350px; /* Um pouco menor que o alerta principal */
+    background-color: #fce4ec;
+    border: 3px solid #ff1493;
+    box-shadow: 8px 8px #ff69b4;
+    z-index: 9; /* Fica em cima, mas abaixo do alerta principal (z-index 10) */
+    padding: 15px;
+    text-align: center;
+    position: absolute; /* Para posicionar em relação aos outros elementos */
+    bottom: 50px; /* Posição na parte inferior da tela */
+    right: 50px; /* Posição na direita da tela */
+    transform: rotate(3deg); /* Dá um toque de desarranjo */
+}
+
+.cringe-box h2 {
+    color: #ff1493;
+    font-size: 1.2em;
+    margin-top: 0;
+    border-bottom: 2px dashed #ff69b4;
+    padding-bottom: 5px;
+}
+
+.cringe-box p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+/* O resto do CSS do coração quicante e do alerta principal permanece igual. */
+/* Certifique-se de que este novo bloco seja adicionado ao seu 'style.css'. */
